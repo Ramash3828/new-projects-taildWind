@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
@@ -13,7 +14,23 @@ const Home = () => {
             }}
             className="hero-area "
         >
-            <div className="container"></div>
+            <div className="container text-white">
+                <div className="hero-left flex flex-col items-center justify-center h-screen">
+                    <h2 className="text-6xl font-bold mb-3 uppercase">
+                        Welcome to our website
+                    </h2>
+                    <p className="w-1/2 my-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Sapiente corrupti, quam perspiciatis suscipit Lorem
+                        ipsum dolor sit amet consectetur adipisicing elit.
+                        Sapiente corrupti, quam perspiciatis suscipit
+                        accusantium mollitia laudantium animi ea cupiditate
+                        obcaecati numquam amet quaerat non assumenda eligendi
+                        quo inventore eos quidem!
+                    </p>
+                    <Link to={"/contact"}>CONTACT ME</Link>
+                </div>
+            </div>
         </div>
     );
 };

@@ -1,33 +1,37 @@
 import React, { useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "./Header.css";
 const Header = () => {
     const [isShow, setIsShow] = useState(false);
 
     return (
-        <div className=" bg-slate-600 transition ease-in duration-1000 h-20 z-10">
+        <div className=" bg-slate-600  h-20 z-10 sticky top-0">
             <nav className="container md:flex justify-between items-center py-4 relative">
                 <div className="logo text-left text-white">
                     <h2 className="text-2xl  font-bold ">LOGO</h2>
                 </div>
-                <div>
+                <div className="md:mt-0 mt-[40px] ">
                     <ul
-                        className={`md:flex gap-3 ${
+                        className={`md:flex gap-3 transition ease-in duration-1000 ${
                             isShow ? "block" : "hidden"
                         }`}
                     >
-                        <li className="px-2 py-1 m-2 bg-slate-900 text-white border border-slate-900 hover:bg-transparent transition-all  rounded-md">
-                            <Link to="/">Home</Link>
+                        <li>
+                            <NavLink to="/">Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/posts">Posts</NavLink>
                         </li>
 
-                        <li className="px-2 py-1 m-2 bg-slate-900 text-white border border-slate-900 hover:bg-transparent transition-all  rounded-md">
-                            <Link to="/contact">Contact</Link>
+                        <li>
+                            <NavLink to="/contact">Contact</NavLink>
                         </li>
-                        <li className="px-2 py-1 m-2 bg-slate-900 text-white border border-slate-900 hover:bg-transparent transition-all  rounded-md">
-                            <Link to="/about">About</Link>
+                        <li>
+                            <NavLink to="/about">About</NavLink>
                         </li>
-                        <li className="px-2 py-1 m-2 bg-slate-900 text-white border border-slate-900 hover:bg-transparent transition-all  rounded-md">
-                            <Link to="/login">Login</Link>
+                        <li>
+                            <NavLink to="/login">Login</NavLink>
                         </li>
                     </ul>
                     <div
